@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Text } from 'react-native';
 import moment from 'moment';
-
-// ✅ Optional: Customize moment text for better readability
 moment.updateLocale('en', {
   relativeTime: {
     future: 'in %s',
-    past: '%s ago',
+    past: '%s',
     s: 'Just now',
     ss: 'Just now',
     m: 'a minute',
@@ -25,9 +23,9 @@ moment.updateLocale('en', {
 });
 
 type TimeAgoProps = {
-  time: string | Date | number; // Accepts ISO string, Date object, or timestamp
+  time: string | Date | number;
   style?: any;
-  live?: boolean; // If true, updates automatically every minute
+  live?: boolean;
 };
 
 const TimeAgo: React.FC<TimeAgoProps> = ({ time, style, live = true }) => {
@@ -38,7 +36,7 @@ const TimeAgo: React.FC<TimeAgoProps> = ({ time, style, live = true }) => {
 
     const interval = setInterval(() => {
       setDisplay(moment(time).fromNow());
-    }, 60000); // update every 1 min
+    }, 60000);
 
     return () => clearInterval(interval);
   }, [time, live]);

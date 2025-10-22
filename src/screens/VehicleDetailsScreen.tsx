@@ -13,7 +13,6 @@ import { useVehicleStore } from '../store/vehicleStore';
 import { RootStackParamList } from '../../App';
 import { Vehicle } from '../types/Vehicle';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import moment from 'moment';
 import TimeAgo from '../components/TimeAgo';
 
 type VehicleDetailsScreenProps = {
@@ -286,7 +285,6 @@ const styles = StyleSheet.create({
     marginRight: 9,
     backgroundColor: '#fff',
   },
-  inputWrapper: { marginBottom: 9 },
   commentInput: {
     backgroundColor: '#fff',
     borderColor: '#dde3eb',
